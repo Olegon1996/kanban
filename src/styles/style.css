@@ -1,0 +1,295 @@
+@charset "UTF-8";
+body {
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  background-image: url("../assets/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 20px 20px 0 20px;
+}
+
+main {
+  display: flex;
+  overflow: auto;
+  height: calc(100vh - 60px);
+  justify-content: start;
+  align-items: start;
+  margin-top: 40px;
+}
+
+.login-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: black;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.column {
+  display: flex;
+  align-items: flex-start;
+}
+.column .column-title-edit {
+  cursor: pointer;
+  background-image: url("../assets/edit.png");
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  position: absolute;
+  top: 0;
+  right: 30px;
+}
+.column .column-title-delete {
+  background-image: url("../assets/delete.png");
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.column > div {
+  background: azure;
+  min-width: 272px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  border-radius: 8px;
+  margin-right: 8px;
+  padding: 6px 15px;
+}
+.column > div .cards-container {
+  width: 100%;
+}
+.column > div .cards-container .swipe-class {
+  background: #0000ff54;
+  transform: scale(1.1);
+  transform: rotate(-5deg);
+}
+.column > div .cards-container .blue-background-class {
+  background: #0000ff54;
+  transform: scale(1.1);
+  transform: rotate(-5deg);
+}
+.column > div .card-title {
+  text-transform: capitalize;
+  font-size: 19px;
+  font-family: monospace;
+  margin-bottom: 10px;
+  display: flex;
+  width: calc(100% - 5px);
+  justify-content: space-between;
+  position: relative;
+}
+.column > div .card-title .card-title-span {
+  margin-right: 80px;
+}
+.column > div .card-item {
+  background: #8a8a9387;
+  width: calc(100% - 20px);
+  padding: 8px 10px;
+  margin: 5px 0;
+  border-radius: 8px;
+  font-size: 18px;
+  font-family: sans-serif;
+  word-break: break-all;
+  cursor: move;
+  position: relative;
+  display: flex;
+}
+.column > div .card-item:active {
+  background: #0000ff54;
+}
+.column > div .card-item .card-text {
+  margin-right: 80px;
+}
+.column > div .card-item .card-title-edit {
+  cursor: pointer;
+  background-image: url("../assets/edit.png");
+  width: 15px;
+  height: 15px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 10px;
+  right: 30px;
+}
+.column > div .card-item .card-title-delete {
+  cursor: pointer;
+  background-image: url("../assets/delete.png");
+  width: 15px;
+  height: 15px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 10px;
+  right: 5px;
+}
+.column > div .add-card,
+.column > div .add-span {
+  cursor: pointer;
+  width: 100%;
+}
+.column > div .before-class {
+  margin: 10px 0;
+  transition: 0.5s;
+}
+.column > div .before-class:hover {
+  background: #75b8f9ad;
+  padding: 5px 5px 5px 5px;
+  border-radius: 8px;
+  transition: 0.5s;
+}
+.column > div .before-class:before {
+  content: "＋";
+  margin-right: 10px;
+}
+.column > div .add-new-column {
+  background: #DFE3E6;
+  padding: 15px 10px;
+  width: calc(100% - 20px);
+  min-width: calc(100% - 20px);
+  height: auto;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+}
+.column > div .add-new-column .select-block {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+.column > div .add-new-column .select-block button {
+  border: none;
+  background: aquamarine;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.column > div .add-new-column .select-block button:focus {
+  outline: 0;
+}
+.column > div .add-new-column .select-block button:hover {
+  background: #16dc9a;
+  transform: scale(1.02);
+}
+.column > div .add-new-column .select-block button:last-child {
+  background: red;
+}
+.column > div .add-new-column input {
+  width: calc(100% - 10px);
+  padding: 10px;
+  border: none;
+  display: flex;
+  background: transparent;
+  font-size: 19px;
+}
+.column > div .add-new-column input:focus {
+  outline: 2px dashed #1c77e4;
+}
+.column > div .add-new-column input:disabled {
+  cursor: pointer;
+}
+
+.add-new-column {
+  background: #DFE3E6;
+  padding: 15px 10px;
+  width: 272px;
+  min-width: 272px;
+  height: auto;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+}
+.add-new-column .add-card,
+.add-new-column .add-span {
+  cursor: pointer;
+  width: 100%;
+}
+.add-new-column .before-class {
+  margin: 10px 0;
+  transition: 0.5s;
+}
+.add-new-column .before-class:hover {
+  background: #75b8f9ad;
+  padding: 5px 5px 5px 5px;
+  border-radius: 8px;
+  transition: 0.5s;
+}
+.add-new-column .before-class:before {
+  content: "＋";
+  margin-right: 10px;
+}
+.add-new-column .select-block {
+  display: none;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+.add-new-column .select-block button {
+  border: none;
+  background: aquamarine;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.add-new-column .select-block button:focus {
+  outline: 0;
+}
+.add-new-column .select-block button:hover {
+  background: #16dc9a;
+  transform: scale(1.02);
+}
+.add-new-column .select-block button:last-child {
+  background: red;
+}
+.add-new-column input {
+  width: calc(100% - 10px);
+  padding: 10px;
+  border: none;
+  display: none;
+  background: transparent;
+  font-size: 19px;
+}
+.add-new-column input:focus {
+  outline: 2px dashed #1c77e4;
+}
+.add-new-column input:disabled {
+  cursor: pointer;
+}
+
+#logOut {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+  background: red;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+#logOut:hover {
+  background: #1c77e4;
+}
+
+/*# sourceMappingURL=style.css.map */
